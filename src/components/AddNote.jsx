@@ -1,26 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
 
-const AddNote = () => {
+const AddNote = (props) => {
+  const [note, setNote] = useState({ title: "", content: "" });
+
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setNote({ ...note, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(note);
+    props.onCreate(note);
+  };
+
   return (
     <div className="add-note-container">
-      <div className="add-note">
+      <form className="add-note" method="post" onSubmit={handleSubmit}>
         <input
           type="text"
-          name="title "
+          name="title"
           placeholder="Enter note title"
           className="form-title"
+          onChange={handleChange}
+          value={note.title}
         />
         <textarea
           name="content"
           placeholder="Enter Note Content Here"
           rows="5"
           className="form-content"
+          onChange={handleChange}
+          value={note.content}
         />
-        <button className="submit-button">
+        <button type="submit" className="submit-button">
           <FaPlus /> Submit Note
         </button>
-      </div>
+      </form>
     </div>
   );
 };
