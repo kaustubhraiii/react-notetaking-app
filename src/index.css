@@ -60,6 +60,23 @@ h3{
   margin-top: 10px;
 }
 
+.delete-button{
+  padding: 8px 16px;
+  border-radius: 17px;
+  border: none;
+  background-color: #626862;
+  color: white;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s ease-in-out;
+}
+
+.delete-button:hover{
+  background-color: #1f1f1f;
+}
+
 .add-note-container {
   display: flex;
   justify-content: space-around;
@@ -120,8 +137,9 @@ h3{
 }
 
 .submit-button svg {
-  margin-right: 4px;
-  margin-top: 4px; /* Adjust the margin as needed */
+  margin-right: 5px;
+  margin-top: 3px;
+  margin-top: 3px; /* Adjust the margin as needed */
 }
 
 /* Media queries for responsiveness */

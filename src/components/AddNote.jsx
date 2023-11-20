@@ -14,6 +14,7 @@ const AddNote = (props) => {
     e.preventDefault();
     console.log(note);
     props.onCreate(note);
+    setNote({ title: "", content: "" }); // Reset the input fields
   };
 
   return (
